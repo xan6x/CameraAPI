@@ -9,21 +9,34 @@ use pocketmine\player\Player;
 
 final class TargetCameraInstruction extends CameraInstruction
 {
-    private ?Vector3 $targetCenterOffset = null;
-    private int $actorUniqueId;
+  private ?Vector3 $targetCenterOffset = null;
+  private int $actorUniqueId;
 
-    public function setTargetCenterOffset(Vector3 $targetCenterOffset): void
-    {
-        $this->targetCenterOffset = $targetCenterOffset;
-    }
+  public function setTargetCenterOffset(Vector3 $targetCenterOffset): void
+  {
+    $this->targetCenterOffset = $targetCenterOffset;
+  }
 
-    public function setActorUniqueId(int $actorUniqueId): void
-    {
-        $this->actorUniqueId = $actorUniqueId;
-    }
+  public function setActorUniqueId(int $actorUniqueId): void
+  {
+    $this->actorUniqueId = $actorUniqueId;
+  }
 
-    public function send(Player $player): void
-    {
-        $player->getNetworkSession()->sendDataPacket(CameraInstructionPacket::create(null, null, null, new CameraTargetInstruction($this->targetCenterOffset, $this->actorUniqueId), null, null));
-    }
+  public function send(Player $player): void
+  {
+    $player->getNetworkSession()->sendDataPacket(
+      CameraInstructionPacket::create(
+        null,
+        null,
+        null,
+        new CameraTargetInstruction($this->targetCenterOffset, $this->actorUniqueId),
+        null,
+        null,
+        null,
+        null,
+        null
+      )
+    );
+  }
+
 }
