@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "xan6x\\CameraAPI\\": "src/CameraAPI/"
+            "CameraAPI\\": "src/CameraAPI/"
         }
     },
     "minimum-stability": "dev",
