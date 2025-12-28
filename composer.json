@@ -1,23 +1,15 @@
 {
-  "name": "CameraAPI",
-  "description": "a PocketMine-MP API to use CameraPacket",
-  "type": "library",
-  "require": {
-    "pocketmine/pocketmine-mp": "^5.0.0"
-  },
-  "autoload": {
-    "classmap": ["src"]
-  },
-  "authors": [
-    {
-      "name": "KaxYum",
-      "email": "itskaxyum@gmail.com"
+    "name": "xan6x/cameraapi",
+    "description": "CameraAPI library for PocketMine-MP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "xan6x\\CameraAPI\\": "src/CameraAPI/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0"
     }
-  ],
-  "extra": {
-    "virion": {
-      "spec": "3.0",
-      "namespace-root": "CameraAPI"
-    }
-  }
 }
